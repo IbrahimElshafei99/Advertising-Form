@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        Ibrahim Adel 20178001
+        Youssef khaled 20178051
+    -->
+    <title>Application Form</title>
+    <h1 style="color: rgb(49, 106, 145)">Advertising Form</h1>
+</head>
+<body>
+    <form name="ad" 
+    action="taskk.php" 
+    target="_blank" 
+    method="POST" 
+    onsubmit="return validateForm()">
+        <!--
+        <fieldset>
+            <legend><b>Personal information</b></legend>
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" required><br>
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" required><br>
+            <label for="mobile">Mobile:</label>
+            <input type="number" id="mobile" required><br>
+            <label for="address">Address:</label>
+            <input type="text" id="address" required><br>
+            <label for="ffax">Fax:</label>
+            <input type="text" id="ffax"><br>
+            <label for="e-mail">E-mail:</label>
+            <input type="email" id="e-mail" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required><br>
+
+    </fieldset>
+    -->
+    <h2 style="color: rgb(49, 106, 145)">Description</h2>
+    <p style="color: red;">Write down the specifics of the product for which you wanted to make an advertisement</p>
+    <label><b>Category:</b></label>
+    <input list="category">
+    <datalist id="category">
+        <option>Car</option>
+        <option>Apartment</option>
+        <option>Furniture</option>
+        <option>Clothes</option>
+        <option>Electric machines</option>
+    </datalist><br>
+
+    <label for="details"><b>Details:</b></label>
+    <input type="text" name="DETAILS" id="details" maxlength="200"><br>
+
+    <label for="price"><b>The price:</b></label>
+    <input type="number" name="PRICE" id="price" min="1" max="10000"><br>
+    <p><br></p>
+
+    <h2 style="color: rgb(49, 106, 145)">Payment</h2>
+    <p style="color: red;">Select the method of payment </p>
+    <label><b>Payment method:</b></label><br>
+    <input type="radio" id="Credit">
+    <label for="Credit">Credit Card</label><br>
+    <input type="radio" id="Cash">
+    <label for="Cash">Cash</label><br>
+    <p><br></p>
+
+    <h2 style="color: rgb(49, 106, 145)">Ad Details</h2>
+    <p style="color: red;">Choose how long the ad will last</p>
+    <label for="period"><b>Ad period:</b></label>
+    <select id="period">
+        <option>Week</option>
+        <option>Two Weeks</option>
+        <option>Month</option>
+        <option>Two Months</option>
+    </select><br>
+
+    <p style="color: red;">Select the ad range </p>
+    <label><b>Ad Spread:</b></label><br>
+    <input type="radio" id="wide">
+    <label for="wide">Wide range</label><br>
+    <input type="radio" id="limited">
+    <label for="limited">Limited range</label><br>
+    
+
+    
+    <p style="color: red;">Select the way we can contact you</p>
+    <label><b>Contact with:</b></label><br>
+    <input type="checkbox" id="mobile">
+    <label for="mobile">Mobile</label><br>
+    <input type="checkbox" id="e--mail">
+    <label for="e--mail">E-mail</label><br>
+    <input type="checkbox" id="fax">
+    <label for="fax">Fax</label><br>
+    <p><br></p>
+    
+
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset"><br>
+    </form>
+    <script>
+        function validateForm()
+        {
+            var x = document.forms["ad"]["PRICE"].value;
+            if(x=="")
+            {
+                alert("You should write the price");
+                return false;
+            }
+            var y=document.forms["ad"]["DETAILS"].value;
+            if(y.length>200)
+            {
+                alert("The max length of details is 200 character");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
